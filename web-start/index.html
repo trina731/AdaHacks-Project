@@ -41,6 +41,43 @@
   <meta name="msapplication-navbutton-color" content="#303F9F">
 
   <!-- Material Design Lite -->
+
+
+  <!-- Add additional services that you want to use -->
+  <script src="/__/firebase/5.4.1/firebase-app.js"></script>
+  <script src="/__/firebase/5.4.1/firebase-auth.js"></script>
+  <script src="/__/firebase/5.4.1/firebase-database.js"></script>
+  <script src="/__/firebase/5.4.1/firebase-storage.js"></script>
+  <script src="/__/firebase/5.4.1/firebase-messaging.js"></script>
+  <script>
+  var config = {
+    apiKey: "AIzaSyDTV3CVRCpFXqIsCxGRTvJJm7UfYpqVbDU",
+    authDomain: "adahacks-project.firebaseapp.com",
+    databaseURL: "https://adahacks-project.firebaseio.com",
+    projectId: "adahacks-project",
+    storageBucket: "adahacks-project.appspot.com",
+    messagingSenderId: "905816767139"
+  };
+  firebase.initializeApp(config);
+  </script>
+<!--script>
+  var config = {
+    apiKey: "AIzaSyDTV3CVRCpFXqIsCxGRTvJJm7UfYpqVbDU",
+    authDomain: "adahacks-project.firebaseapp.com",
+    databaseURL: "https://adahacks-project.firebaseio.com",
+    projectId: "adahacks-project",
+    storageBucket: "adahacks-project.appspot.com",
+    messagingSenderId: "905816767139"
+  };
+  firebase.initializeApp(config);
+</script>
+-->
+  <!--script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-messaging.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-functions.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/init.js"></script>
+-->
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css">
   <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
@@ -50,6 +87,11 @@
   <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
+
+
+<!-- Comment out (or don't include) services that you don't want to use -->
+<!-- <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-storage.js"></script> -->
+
 <div class="demo-layout mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
   <!-- Header section containing logo -->
@@ -64,7 +106,7 @@
         <button hidden id="sign-out" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
           Sign-out
         </button>
-        <button hidden id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
+        <button id="sign-in" class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-color-text--white">
           <i class="material-icons">account_circle</i>Sign-in with Google
         </button>
       </div>
@@ -106,17 +148,52 @@
     </div>
   </main>
 </div>
+<script src="scripts/main.js"></script>
+
 
 <!-- Import and configure the Firebase SDK -->
 <!-- These scripts are made available when the app is served or deployed on Firebase Hosting -->
 <!-- If you do not want to serve/host your project using Firebase Hosting see https://firebase.google.com/docs/web/setup -->
-<script src="/__/firebase/5.4.2/firebase-app.js"></script>
-<script src="/__/firebase/5.4.2/firebase-auth.js"></script>
-<script src="/__/firebase/5.4.2/firebase-database.js"></script>
-<script src="/__/firebase/5.4.2/firebase-storage.js"></script>
-<script src="/__/firebase/5.4.2/firebase-messaging.js"></script>
-<script src="/__/firebase/init.js"></script>
 
-<script src="scripts/main.js"></script>
+
+
+<!-- <script src="https://www.gstatic.com/firebasejs/5.4.1/firebase-storage.js"></script> -->
+
+
+<!--
+<script>
+
+  // Returns the signed-in user's profile Pic URL.
+
+  firebase.auth().createUserWithEmailAndPassword(email, password).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // ...
+});
+firebase.auth().signInWithEmailAndPassword(email, password).catch(function(error) {
+  // Handle Errors here.
+  var errorCode = error.code;
+  var errorMessage = error.message;
+  // ...
+});
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+    // User is signed in.
+    var displayName = user.displayName;
+  var email = user.email;
+    var emailVerified = user.emailVerified;
+    var photoURL = user.photoURL;
+    var isAnonymous = user.isAnonymous;
+    var uid = user.uid;
+    var providerData = user.providerData;
+    // ...
+  } else {
+    // User is signed out.
+    // ...
+  }
+});
+</script>
+-->
 </body>
 </html>
