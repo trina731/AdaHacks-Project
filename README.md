@@ -1,4 +1,4 @@
-#FriendlyChat
+# FriendlyChat
 Social network for cancer patients for them to share their stories and connect with each other. Web app that allows users to login using their Google Account, create personalized profiles, send one-to-one messages to other users, and post on other users' public discussion walls.
 
 
